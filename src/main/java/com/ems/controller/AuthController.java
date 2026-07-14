@@ -32,4 +32,9 @@ public class AuthController {
             throw new RuntimeException("Invalid credentials");
         }
     }
+    @GetMapping("/clear-users")
+    public String clearUsers() {
+        repo.deleteAll();
+        return "All users deleted";
+    }
 }
